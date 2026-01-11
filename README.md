@@ -1,2 +1,3 @@
-# api-manajemen-produk
-REST API untuk manajemen produk,user dan transaksi
+# uas_webservice
+Proyek UAS Pemrograman Web Service (API Manajemen Produk dan Transaksi E-Commerce)
+
