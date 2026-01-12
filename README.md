@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# API Manajemen Produk dan Transaksi
+# API Manajemen Produk dan Transaksi E-commerce
 
 ## Deskripsi Singkat
 API Manajemen Produk dan Transaksi adalah sistem Web Service berbasis RESTful API
@@ -43,16 +43,19 @@ JSON Web Token (JWT).
    composer install
 
 3. Konfigurasi environment =
-   cp .env.example .env
-   php artisan key:generate
+    cp .env.example .env
+    php artisan key:generate
+
 
 4. Atur database pada file .env =
     DB_DATABASE=api_ecommerce
     DB_USERNAME=root
     DB_PASSWORD=
 
+
 5. Migrasi database =
    php artisan migrate
+
 
 6. Jalankan server =
    php artisan serve
