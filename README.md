@@ -30,31 +30,31 @@ JSON Web Token (JWT).
 5. Transaction Details
 
 ## Tim Pengembang
- Rini = Autentikasi JWT & Database
- Qory = Products & Transaction
- Lia  = Payment & Transaction detail
+ 1. Rini = Autentikasi JWT & Database
+ 2. Qory = Products & Transaction
+ 3. Lia  = Payment & Transaction detail
 
 ## Cara Menjalankan Sistem
-1. Clone repository
+1. Clone repository =
    git clone https://github.com/anshary244/api-manajemen-produk.git
    cd api-manajemen-produk
 
-2. Install dependency
+2. Install dependency =
    composer install
 
-3. Konfigurasi environment
+3. Konfigurasi environment =
    cp .env.example .env
    php artisan key:generate
 
-4. Atur database pada file .env
+4. Atur database pada file .env =
     DB_DATABASE=api_ecommerce
     DB_USERNAME=root
     DB_PASSWORD=
 
-5. Migrasi database
+5. Migrasi database =
    php artisan migrate
 
-6. Jalankan server
+6. Jalankan server =
    php artisan serve
 
 Aplikasi akan berjalan di:
