@@ -8,9 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
-    // =========================
+ 
     // GET TRANSAKSI USER LOGIN
-    // =========================
     public function index()
     {
         $transactions = Transaction::where('user_id', Auth::id())->get();
@@ -18,9 +17,7 @@ class TransactionController extends Controller
         return response()->json($transactions, 200);
     }
 
-    // =========================
     // CREATE TRANSAKSI
-    // =========================
     public function store(Request $request)
     {
         $request->validate([
@@ -37,11 +34,10 @@ class TransactionController extends Controller
             'message' => 'Transaksi berhasil dibuat',
             'data' => $transaction
         ], 201);
+
     }
 
-    // =========================
     // DETAIL TRANSAKSI USER
-    // =========================
     public function show($id)
     {
         $transaction = Transaction::where('id', $id)
@@ -57,9 +53,9 @@ class TransactionController extends Controller
         return response()->json($transaction, 200);
     }
 
-    // =========================
+ 
     // UPDATE STATUS TRANSAKSI
-    // =========================
+
    public function update(Request $request, $id)
 {
     // Validasi input
@@ -80,6 +76,26 @@ class TransactionController extends Controller
     return response()->json([
         'message' => 'Transaction updated successfully',
         'data' => $transaction
+    ], 200);
+}
+
+    // DELETE TRANSAKSI USER
+    public function destroy($id)
+{
+    $transaction = Transaction::where('id', $id)
+        ->where('user_id', Auth::id())
+        ->first();
+
+    if (!$transaction) {
+        return response()->json([
+            'message' => 'Transaksi tidak ditemukan atau bukan milik Anda'
+        ], 404);
+    }
+
+    $transaction->delete();
+
+    return response()->json([
+        'message' => 'Transaksi berhasil dihapus'
     ], 200);
 }
 }

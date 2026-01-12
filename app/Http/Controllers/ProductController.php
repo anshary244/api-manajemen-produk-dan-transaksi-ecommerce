@@ -29,6 +29,11 @@ class ProductController extends Controller
             'message' => 'Produk berhasil ditambahkan',
             'data' => $product
         ], 201);
+        // catat aktivitas
+        ActivityLogController::log('create_product', 'Product ID: '.$product->id.' - '.$product->name);
+
+        return response()->json($product, 201);
+        
     }
 
     // GET /api/products/{id}

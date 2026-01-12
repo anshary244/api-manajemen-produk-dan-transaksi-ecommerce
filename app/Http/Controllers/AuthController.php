@@ -9,17 +9,31 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
-    // ================= REGISTER =================
-    public function register(Request $request)
-    {
-        User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>bcrypt($request->password)
-        ]);
-        return response()->json(['message'=>'Register berhasil']);
-    
-    }
+
+public function register(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:6',
+    ]);
+
+    // Buat user baru
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
+
+    // Kirim response beserta data user
+    return response()->json([
+        'message' => 'Register berhasil',
+        'user' => $user  // ini menampilkan data user yang baru dibuat
+    ], 201);
+}
+
+
 
     // ================= LOGIN =================
 
