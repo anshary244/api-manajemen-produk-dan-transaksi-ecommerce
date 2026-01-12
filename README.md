@@ -22,6 +22,18 @@ JSON Web Token (JWT).
 - JWT Authentication
 - Postman
 
+## Resource Utama
+1. users
+2. Products
+3. Transaction
+4. Payment
+5. Transaction Details
+
+## Tim Pengembang
+ Rini = Autentikasi JWT & Database
+ Qory = Products & Transaction
+ Lia  = Payment & Transaction detail
+
 ## Cara Menjalankan Sistem
 1. Clone repository
    git clone https://github.com/anshary244/api-manajemen-produk.git
@@ -35,9 +47,9 @@ JSON Web Token (JWT).
    php artisan key:generate
 
 4. Atur database pada file .env
-   DB_DATABASE=nama_database
-   DB_USERNAME=username_database
-   DB_PASSWORD=password_database
+    DB_DATABASE=api_ecommerce
+    DB_USERNAME=root
+    DB_PASSWORD=
 
 5. Migrasi database
    php artisan migrate
@@ -49,20 +61,20 @@ Aplikasi akan berjalan di:
 http://127.0.0.1:8000
 
 ## Informasi Akun Uji Coba
-Email: admin@test.com  
-Password: password  
+Email: rini@gmail.com  
+Password: 123456  
 
 (Jika akun belum tersedia, silakan register melalui endpoint register)
 
-## Dokumentasi API
-Dokumentasi API tersedia dalam folder:
-docs/
+## Dokumentasi API (Postman)
 
-File dokumentasi:
-postman_collection.json
+Link Dokumentasi Rini: https://documenter.getpostman.com/view/49032366/2sBXVfiBPA
 
-Dokumentasi berisi daftar endpoint, HTTP method, parameter,
-serta contoh response JSON dan penggunaan Bearer Token (JWT).
+Link Dokumentasi Qory: https://documenter.getpostman.com/view/49032366/2sBXVfiBPA
+
+Link Dokumentasi Dahlia : https://documenter.getpostman.com/view/49032366/2sBXVfiBPA
+
+
 
 ## Catatan
 Proyek ini dikembangkan sebagai Ujian Akhir Semester (UAS)
